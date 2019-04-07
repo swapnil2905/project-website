@@ -1,0 +1,184 @@
+<html>
+    <head>
+        
+        <title>Ascetic Martin</title>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Chakra+Petch" rel="stylesheet">
+	</head>
+    <style>
+    @font-face {
+      font-family: 'Chakra Petch', sans-serif; format('truetype');
+    }
+
+    html, body {
+        margin: 0;
+        font-family: 'Chakra Petch';
+        height: 100%;
+		margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+    
+	p{
+		color: #fff
+	}		
+
+    a:link    {color:#fff;}
+    a:visited {color:#fff;}
+    a:hover   {color:#000;}
+    a:active  {color:#fff;}
+    
+    #main {
+        background-image: url(https://i.imgur.com/IKiegTO.jpg);
+        background-size: cover;
+        height: 100%;
+		margin: 0;
+        padding: 0;
+		
+    }
+	
+
+    #title {
+        color:Black;
+        font-size: 4em;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        transform: translate(0, -50%);
+        text-align: center;
+        animation: overlapcolor 2s ease-out;
+        z-index: 99;
+        opacity: 1;
+    }
+
+    @keyframes overlapcolor {
+        0% {
+            color: black;
+            opacity: 0;
+        }
+
+        25% {
+            opacity: 0;
+        }
+
+        50% {
+            color: black;
+            opacity: 1;
+        }
+
+        100% {
+            color: red;
+        }
+    }
+
+    #title::after {
+        animation: cursoranim 1s infinite, hideAtStart 2.5s linear;
+        animation-timing-function: step-end;
+        content: "|";
+        margin-left: 5px;
+    }
+
+    @keyframes hideAtStart {
+        0% {
+            opacity: 0;
+        }
+
+        99.99% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes cursoranim {
+        0% {
+            color: transparent;
+        }
+
+
+        50% {
+            color: Red;
+
+        }
+    }
+
+    #menu {
+        text-align: center;
+        width: 100%;
+        margin: 0 0 10px 0;
+        padding: 0;
+        position: absolute;
+        bottom: 0;
+    }
+
+    #menu li {
+        display: inline;
+        margin: 0px 25px 0px 25px;
+        font-size: 1.8em;
+        transition: all 0.2s;
+        text-decoration: underline;
+    }
+
+    #menu li:hover {
+        font-size: 2.6em;
+        cursor: pointer;
+    }
+
+    #transition-placeholder {
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        height: 100%;
+        background-color: #212121;
+        animation: overlap 2s cubic-bezier(0, 0, 0.08, 1.02);
+    }
+
+    @keyframes overlap {
+        0% {
+            top: 0%;
+        }
+
+        50% {
+            top: 0%;
+        }
+
+        100% {
+            top: 100%;
+        }
+		
+    }
+  </style>
+    <body onscroll="bodyScroll()">
+        <div id="main">
+            <p id="title">Skydiver,  audiophile, Eames fan and growthhacker. Performing at the nexus of simplicity and elegance to save the world from Pollution. My opinions belong to nobody but myself.
+            </p>
+
+            <ul id="menu">
+                <a href= "https://twitter.com/iamascetic"><li>Tweet me!</li></a>
+                <a href= "https://github.com/swapnil2905"><li>My Opensource projects</li></a>
+                <a href= "https://www.linkedin.com/in/swapnil-martin-89068a98/"><li>Linkedin</li></a>
+				<p><i>i like to make jokes when iam uncomfortable , iam addicted to learn new subjects/technologies/languages and i like to listen to audiobooks</i></p>
+				<p>Made with ❤️ by <a href= "https://www.facebook.com/swapnil.martin">Swapnil_Martin</a>
+            </ul>
+        </div>
+
+        <div id="transition-placeholder"></div>
+
+        <script type="text/javascript">
+            var scrollTimer;
+            function bodyScroll() {
+                if (scrollTimer != -1)
+                    clearTimeout(scrollTimer);
+
+                scrollTimer = window.setTimeout("scrollFinished()", 500);
+            }
+
+            function scrollFinished() {
+                window.location = toUrl;
+            }
+        </script>
+	</body>
+</html>
